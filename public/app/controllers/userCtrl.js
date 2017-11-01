@@ -27,7 +27,7 @@ angular.module('userController', [])
 
 })
 
-.controller("resetTokenCheckCtrl", function($http, $routeParams, $scope){
+.controller("resetTokenCheckCtrl", function($http, $routeParams, $scope, $timeout, $location){
 
     var app = this;
     app.loaded = true;

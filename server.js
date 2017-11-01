@@ -10,6 +10,20 @@ var host = process.env.HOST || "htttp://localhost";
 console.log(process.env);
 var secret = "Shall we begin?";
 
+var os = require('os');
+
+var interfaces = os.networkInterfaces();
+var addresses = [];
+for (var k in interfaces) {
+    for (var k2 in interfaces[k]) {
+        var address = interfaces[k][k2];
+        if (address.family === 'IPv4' && !address.internal) {
+            addresses.push(address.address);
+        }
+    }
+}
+console.log("ADDRESSES");
+console.log(addresses);
 var nodemailer = require('nodemailer');
 var sgTransport = require('nodemailer-sendgrid-transport');
 

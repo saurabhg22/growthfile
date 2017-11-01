@@ -171,8 +171,8 @@ app.put('/sendPasswordResetLink', function (req, res) {
                                 from: 'Growthfile, staff@growthfile.com',
                                 to: email,
                                 subject: 'Growthfile Password Reset Link',
-                                text: "Hello, " + user.name + " you recently requested a password reset link. Please follow the link below to reset your password.\n\nhttps://" + req.headers.host + ":" +v port + "/reset/" + user.resetToken,
-                                html: "Hello, <strong>" + user.name + "</strong> you recently requested a password reset link. Please follow the link below to reset your password.<br><br><a href=\"http://localhost:" + port + "/reset/" + user.resetToken + "\">http://localhost:" + port + "</a>"
+                                text: "Hello, " + user.name + " you recently requested a password reset link. Please follow the link below to reset your password.\n\nhttps://" + req.headers.host + "/reset/" + user.resetToken,
+                                html: "Hello, <strong>" + user.name + "</strong> you recently requested a password reset link. Please follow the link below to reset your password.<br><br><a href=\"https://" + req.headers.host + "/reset/" + user.resetToken + "\">https://" + req.headers.host + "</a>"
                             };
                             
                             client.sendMail(Email, function(err, info){

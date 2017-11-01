@@ -305,6 +305,8 @@ app.put('/savepassword', function(req, res) {
 
 
 app.get('*', function(req,res){
+    console.log("REQUEST");
+    console.log(req);
     res.sendFile(path.join(__dirname + "/public/app/index.html"));
 });
 

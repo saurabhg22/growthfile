@@ -57,8 +57,12 @@ angular.module('userController', [])
         $http.put('/savepassword', newData).then(function(data){
             console.log(data.data);
             if(data.data.success){
-                app.successMsg = data.data.message;
+                app.successMsg = data.data.message  + " Redirecting to login page....";
                 app.errorMsg = false;
+                
+                $timeout(function(){
+                    $location.path('/login');
+                }, 2000);
             }
             else{
                 app.errorMsg = data.data.message;

@@ -6,6 +6,8 @@ var mongoose = require("mongoose");
 var User = require("./app/models/user");
 var jwt = require('jsonwebtoken');
 var port = process.env.PORT || 8080;
+var host = process.env.HOST || "htttp://localhost";
+console.log(host);
 var secret = "Shall we begin?";
 
 var nodemailer = require('nodemailer');

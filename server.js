@@ -185,7 +185,7 @@ app.put('/sendPasswordResetLink', function (req, res) {
                                 from: 'Growthfile, staff@growthfile.com',
                                 to: email,
                                 subject: 'Growthfile Password Reset Link',
-                                text: "Hello, " + user.name + " you recently requested a password reset link. Please follow the link below to reset your password.\n\nhttp://localhost:" + port + "/reset/" + user.resetToken,
+                                text: "Hello, " + user.name + " you recently requested a password reset link. Please follow the link below to reset your password.\n\nhttps://" + req.headers.host + ":" +v port + "/reset/" + user.resetToken,
                                 html: "Hello, <strong>" + user.name + "</strong> you recently requested a password reset link. Please follow the link below to reset your password.<br><br><a href=\"http://localhost:" + port + "/reset/" + user.resetToken + "\">http://localhost:" + port + "</a>"
                             };
                             
@@ -305,8 +305,8 @@ app.put('/savepassword', function(req, res) {
 
 
 app.get('*', function(req,res){
-    console.log("12345");
-    console.log(req.headers);
+
+
     res.sendFile(path.join(__dirname + "/public/app/index.html"));
 });
 
